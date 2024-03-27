@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import Image from "next/image";
+import NavLink from "./navLink";
 
 const links = [
   { url: "/", title: "Home" },
@@ -18,7 +19,7 @@ const Navbar = () => {
       {/* Links */}
       <div className='hidden md:flex gap-4 w-1/3'>
         {links.map(link => (
-          <Link href={link.url} key={link.title}>{link.title}</Link>
+          <NavLink link={link} key={link.title}/>
         ))}
       </div>
       {/*Logo here */}
@@ -35,7 +36,7 @@ const Navbar = () => {
         </Link>
         <Link href="/">
           <Image src="/dribbble.png" alt="" width={24} height={24} />
-        </Link>
+        </Link>  
         <Link href="/">
           <Image src="/instagram.png" alt="" width={24} height={24} />
         </Link>
